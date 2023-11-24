@@ -1,0 +1,47 @@
+@import url('./reset.css');
+
+/* || Root variable and General style */
+:root {
+  --primary: #FFFFFF;
+  --secondary: #8685EF;
+  --accent: #FAF8FF;
+  --accent2: #E3E0F3;
+}
+
+* {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* || Header and Navigation */
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 16px 0;
+}
+
+nav ul {
+  display: inline-flex;
+  list-style: none;
+  padding: 0;
+}
+
+nav ul>li>a {
+  text-decoration: none;
+  color: var(--secondary);
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: small;
+  display: inline-block;
+  text-align: center;
+  min-width: 80px;
+  margin: 0 10px;
+  padding: 6px 10px;
+  border: 1px solid var(--secondary);
+  border-radius: 10px;
+}
+
+main {
+  padding: 32px;
+}

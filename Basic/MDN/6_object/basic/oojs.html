@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Object-oriented JavaScript example</title>
+</head>
+
+<body>
+  <p>This example requires you to enter commands in your browser's JavaScript console (see <a
+      href="https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_are_browser_developer_tools">What are
+      browser developer tools</a> for more information).</p>
+
+  <script>
+    // object literal
+    const person = {
+      // object properties
+      name: {
+        first: 'Bob',
+        last: 'Smith'
+      },
+      age: 32,
+
+      // object methods
+      bio() {
+        console.log(`${this.name.first} ${this.name.last} is ${this.age} years old`)
+      },
+      introduceSelf() {
+        console.log(`Hi! I'm ${this.name.first}`)
+      }
+    };
+
+    // in console: person.age
+    // person acts as a `namespace`
+
+    // object sometimes called 'associative arrays': they map strings to values in the same way array map numbers to values
+
+    function logProperty(propertyName) {
+      console.log(person[propertyName])
+    }
+
+    //setting
+    person.age = 22;
+    person['name']['first'] = 'RaeKyo';
+
+    person['eyes'] = 'emeral';
+    person.farewell = function () {
+      console.log('bye mom!')
+    }
+
+    // bracket notation properties/member name dynamic set
+    const avatarName = 'filePath';
+    const avatarValue = 'user_avatar.jpg';
+
+    person[avatarName] = avatarValue;
+
+    // constructor
+    function Person(name) {
+      this.name = name;
+      this.introduceSelf = function () {
+        console.log(`Hi! I'm ${this.name}`)
+      }
+    }
+  </script>
+
+</body>
+
+</html>

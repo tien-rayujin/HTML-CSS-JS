@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Delegation</title>
+  <style>
+    .tile {
+      height: 100px;
+      width: 25%;
+      float: left;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="container">
+    <div class="tile"></div>
+    <div class="tile"></div>
+    <div class="tile"></div>
+    <div class="tile"></div>
+    <div class="tile"></div>
+    <div class="tile"></div>
+    <div class="tile"></div>
+    <div class="tile"></div>
+    <div class="tile"></div>
+    <div class="tile"></div>
+    <div class="tile"></div>
+    <div class="tile"></div>
+    <div class="tile"></div>
+    <div class="tile"></div>
+    <div class="tile"></div>
+    <div class="tile"></div>
+    <div class="tile"></div>
+    <div class="tile"></div>
+    <div class="tile"></div>
+    <div class="tile"></div>
+    <div class="tile"></div>
+    <div class="tile"></div>
+    <div class="tile"></div>
+    <div class="tile"></div>
+    <div class="tile"></div>
+    <div class="tile"></div>
+    <div class="tile"></div>
+    <div class="tile"></div>
+    <div class="tile"></div>
+    <div class="tile"></div>
+    <div class="tile"></div>
+    <div class="tile"></div>
+  </div>
+
+  <script>
+    const container = document.querySelector('#container')
+
+    // using pointer event: mouseover
+    container.addEventListener('mouseover', (event) => {
+      event.target.style.backgroundColor = bgChange()
+    })
+
+    function random(number) {
+      return Math.floor(Math.random() * number)
+    }
+
+    function bgChange() {
+      return `rgb(${random(255)}, ${random(255)}, ${random(255)})`
+    }
+
+    setInterval(() => {
+      const tiles = container.getElementsByClassName('tile')
+      for (const e of tiles) {
+        e.style.backgroundColor = bgChange()
+        // e.style.background = `linear-gradient(${bgChange()}, ${bgChange()})`
+      }
+    }, 5000)
+
+  </script>
+
+</body>
+
+</html>

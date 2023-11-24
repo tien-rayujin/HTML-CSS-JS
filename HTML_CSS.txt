@@ -1,0 +1,163 @@
+======================================================================================HTML
+
+head: 	<meta charset="utf-8">
+	meta element include name and content attribute which help SEO
+	ex:
+		<meta name="author" content="RaeKyo">
+		<meta name="description" content="..."> - will display below title search result like to that page
+
+
+<html lang="en-US"> - increase readibility in different language, better indexed
+
+
+heading content effect SEO
+
+<em> emphasis to stress word, and implicity meaning behind
+<strong> stress them in spoken language and bold them in written language
+
+<strong>, <em>, <mark>, or <span> suitable for SEO rather than <i> <b> <u> just a presentation elements - poorly support
+
+<a> 
+ - attribute: title- tool tips for link
+ - can use componenet fragment allow browser goto specific file and componenet by id element
+	+ use with <a> to either link to component at current page #contact, or other page product.html#productList
+
+
+Beside <ul> and <ol> we have description list, list of item title follow by their description
+
+<dl> : description list tag
+<dt> : description title
+<dd> : description definition
+
+
+
+<code> define text code in different format (with font monospace)
+
+quote from somewhere else use <blockquote> follow by "cite" attribute
+cite attribute can use in an other element called inline cite
+
+
+<abbr> : abbreviation
+ - attribute: title
+
+
+<address> :
+ - Telephone: Tel
+ - Email: Email
+ - Page written by : <a>
+
+
+
+
+<code>
+<pre> : code block, remain whitespace
+<var> : variable
+<kbd> : keyboard
+<samp> : output
+
+
+
+<time>
+ - attrbiute: datetime
+ - ex: <time datetime="2016-01-20">20 January 2016</time>
+
+
+
+
+Website Structure:
+- <header> header - can also used in <article, section> to mark the header
+- <nav> navigation
+- <aside> sidebar - often placed in <main>
+- <main> main content - main per page
+- <footer> footer: sometimes help SEO
+
+
+- <article> : related content
+- <section> : group part
+
+
+
+
+- <div> <span> + class : group element for uses of CSS or JS
+
+<img>
+if specific width and height of <img> then browser interpreter it as empty block if img is not loaded yet before page and remain page structure
+ - attribute: src, alt, width, heigth, title is good practice
+
+
+
+Permissive:
+
+-If the image is released under a permissive license, such as MIT, BSD, or a suitable Creative Commons (CC) license, you do not need to pay a license fee or seek permission to use it. Still, there are various licensing conditions you will have to fulfill, which vary by license.
+
+-For example, you might have to:
+Provide a link to the original source of the image and credit its creator.
+Indicate whether any changes were made to it.
+Share any derivative works created using the image under the same license as the original.
+Not share any derivative works at all.
+Not use the image in any commercial work.
+Include a copy of the license along with any release that uses the image.
+
+<figure>
+ - <img>
+ - <figcaption>
+
+
+<table>
+ - <colgroup> <col>
+ - <thead> <tbody> <tfooter>
+ - <tr> <th> <td>
+ - attribute: colspan, rowspan, summary/caption
+
+
+
+
+======================================================================================CSS
+
+
+-User asgent style, UA styleseet - default style of browser
+
+selectors { -> CSS rulesets
+  property: value -> declaraction
+}
+
+
+CSS Selector:
+
+- decendant combinator:
+li em {}
+
+- next-sibling combinator
+h1+p {}
+
+- combinator: direct child
+article>p {}
+
+a:link, :visited, :hover {}
+
+
+
+
+CSS function
+
+- calc()
+- rotate() ->  rotate(0.8turn)
+
+
+
+CSS @rules
+ - @import "URL"
+ - @media () -> @media (min-width: 30em)
+
+Shorthand property:
+ - padding, margin
+ - font
+ - border, background
+
+
+
+
+
+
+
+

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Random color example — event handler attribute</title>
+  <style>
+    button {
+      margin: 10px
+    }
+  </style>
+</head>
+
+<body>
+  <button>Change color</button>
+
+  <input type="text" id="textBox">
+  <div id="output"></div>
+
+  <form>
+    <div>
+      <label for="fname">First name: </label>
+      <input id="fname" type="text">
+    </div>
+    <div>
+      <label for="lname">Last name: </label>
+      <input id="lname" type="text">
+    </div>
+    <div>
+      <input id="submit" type="submit">
+    </div>
+  </form>
+  <p id="validation"></p>
+
+  <!-- Event: change background color event -->
+  <script>
+    const btn = document.querySelector('button');
+
+    function random(number) {
+      return Math.floor(Math.random() * (number + 1));
+    }
+
+    function changeBackground(e) {
+      const rndCol = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
+      this.style.backgroundColor = rndCol;
+      console.log(e)
+    }
+
+    // click, focus, blur, mouseover, mouseout, dblclick
+    btn.addEventListener('mouseout', changeBackground);
+
+    // event handler properties
+    btn.onclick = changeBackground
+
+    // remove event
+    btn.addEventListener('dblclick', () => {
+      btn.removeEventListener('mouseout', changeBackground)
+    })
+  </script>
+
+  <!-- Event: input listener  -->
+  <script>
+    const textBox = document.querySelector("input")
+    const output = document.querySelector("#output")
+
+    textBox.addEventListener('keydown', (event) => {
+      console.log(this);    // `this` here refers to the global Window object
+      output.textContent = `You pressed "${event.key}"`
+    })
+
+    textBox.addEventListener('keyup', function (event) {
+      console.log(this);    // `this` here refers to the HTMLInputElement
+      output.textContent = `You pressed "${event.key}"`
+    })
+
+  </script>
+
+  <!-- Event: custom form validation -->
+  <script>
+    const form = document.querySelector('form')
+    const fname = document.getElementById('fname')
+    const lname = document.getElementById('lname')
+    const para = document.querySelector('#validation')
+
+    form.addEventListener('submit', (evt) => {
+      if (fname.value === '' || lname.value === '') {
+        evt.preventDefault()
+        para.textContent = 'You need to fill in both names!'
+      }
+    })
+  </script>
+</body>
+
+</html>
