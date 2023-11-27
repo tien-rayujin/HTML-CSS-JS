@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <button id="call">Call</button>
+  <div>
+    <textarea type="text" placeholder="type something imediately after click Call button"></textarea>
+  </div>
+  <pre id="output"></pre>
+
+  <script>
+    const call = document.querySelector("#call");
+    const output = document.querySelector("#output");
+
+    call.addEventListener("click", () => {
+      const urls = [
+        "http://localhost:5000/service",
+        "http://localhost:5000/bird/type",
+        "http://localhost:5000/post",
+        // "http://localhost:5173/api/review",
+        "http://localhost:5000/statistics/most-used-service"
+      ];
+
+      // const requests = urls.map(url => fetch(url));
+
+      // Promise.all(requests)
+      //   .then((responses) => Promise.all(responses.map(response => response.json())))
+      //   .then((dataArray) => {
+      //     output.textContent += `Response arrvied...\n`;
+
+      //     dataArray.forEach(data => {
+      //       output.textContent += JSON.stringify(data, null, 2);
+      //     });
+      //   });
+
+      // const requests = urls.map(url => fetch(url));
+
+      // Promise.all(requests)
+      //   .then((responses) => {
+      //     output.textContent += `Response arrvied...\n`;
+      //     return Promise.all(responses.map(response => response.json()));
+      //   })
+      //   .then((jsonResponses) => {
+      //     output.textContent += `Json arrvied...\n`;
+      //     output.textContent += JSON.stringify(jsonResponses, null, 2);
+      //   })
+      //   .catch((error) => output.textContent += `Couldn't fetch data: ${error}\n`);
+
+      // output.textContent += `My name is Tien\n`;
+
+
+      const fetchDataAsync = async () => {
+        try {
+          const requests = urls.map(url => fetch(url)); // Promise[]
+          const responses = await Promise.all(requests);  // Resposne[] instead of Promise<Reponse[]>
+
+          setTimeout(async () => {
+            output.textContent += `Response arrvied...\n`;
+            const jsonResponses = await Promise.all(responses.map(response => response.json()));
+
+
+            output.textContent += `Json arrvied...\n`;
+            output.textContent += JSON.stringify(jsonResponses, null, 2);
+          }, 3000);
+
+
+        } catch (error) {
+          output.textContent += `Couldn't fetch data: ${error}\n`;
+        }
+
+        output.textContent += `My name is Tien\n`;
+      };
+
+      fetchDataAsync();
+    })
+  </script>
+</body>
+
+</html>
