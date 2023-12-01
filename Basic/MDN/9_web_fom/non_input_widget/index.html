@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../form_structure/style.css">
+</head>
+
+<body>
+  <form action="#">
+    <section>
+      <!-- select with value option (if omited, content will be sent) -->
+      <p>
+        <label for="simple">Select box</label>
+        <select id="simple" name="simple">
+          <option value="banana">Big, beautiful yellow banana</option>
+          <option value="cherry">Succulent, juicy cherry</option>
+          <option value="lemon">Sharp, powerful lemon</option>
+        </select>
+      </p>
+
+      <!-- Select with option group -->
+      <p>
+        <label for="groups">Select with option groups</label>
+        <select id="groups" name="groups">
+          <optgroup label="fruits">
+            <option>Banana</option>
+            <option selected>Cherry</option>
+            <option>Lemon</option>
+          </optgroup>
+          <optgroup label="vegetables">
+            <option>Carrot</option>
+            <option>Eggplant</option>
+            <option>Potato</option>
+          </optgroup>
+        </select>
+
+      </p>
+
+      <!-- Auto complete select box -->
+      <label for="myFruit">What's your favorite fruit?</label>
+      <input type="text" name="myFruit" id="myFruit" list="mySuggestion" />
+      <datalist id="mySuggestion">
+        <option>Apple</option>
+        <option>Banana</option>
+        <option>Blackberry</option>
+        <option>Blueberry</option>
+        <option>Lemon</option>
+        <option>Lychee</option>
+        <option>Peach</option>
+        <option>Pear</option>
+      </datalist>
+
+      <!-- In case of old browser version, the datalist goes with select can perform the same action -->
+      <label for="myFruit">What is your favorite fruit? (With fallback)</label>
+      <input type="text" id="myFruit" name="fruit" list="fruitList" />
+
+      <datalist id="fruitList">
+        <label for="suggestion">or pick a fruit</label>
+        <select id="suggestion" name="altFruit">
+          <option>Apple</option>
+          <option>Banana</option>
+          <option>Blackberry</option>
+          <option>Blueberry</option>
+          <option>Lemon</option>
+          <option>Lychee</option>
+          <option>Peach</option>
+          <option>Pear</option>
+        </select>
+      </datalist>
+
+      <!-- Auto complete select box -->
+      <label for="myColor">What's your favorite color in this pallet?</label>
+      <input type="color" name="myColor" id="myColor" list="myColorSuggestion" />
+      <datalist id="myColorSuggestion">
+        <option>gray</option>
+        <option>black</option>
+        <option>white</option>
+        <option>orange</option>
+        <option>red</option>
+        <option>green</option>
+        <option>blue</option>
+        <option>yellow</option>
+      </datalist>
+
+      <p>
+        <meter min="0" max="100" value="75" low="33" high="66" optimum="0">75</meter>
+      </p>
+
+      <p>
+        <progress max="100" value="75">75/100</progress>
+      </p>
+    </section>
+  </form>
+</body>
+
+</html>

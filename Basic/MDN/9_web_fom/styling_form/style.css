@@ -1,0 +1,19 @@
+/* make forms appearance consistent */
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+
+  width: 200px;
+  box-sizing: border-box;
+  margin: 0;
+  padding-right: 0;
+}
+
+label {
+  width: 90px;
+  display: inline-block;
+  text-align: right;
+}
