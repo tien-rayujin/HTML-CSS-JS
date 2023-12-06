@@ -38,6 +38,7 @@ function alarm(person, delay) {
 
 button.addEventListener("click", async () => {
   try {
+    output.textContent = "Please wait abit ...";
     const message = await alarm(name.value, delay.value);
     output.textContent = message;
   } catch (error) {
